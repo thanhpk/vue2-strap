@@ -1,0 +1,28 @@
+{
+  "name": "vue2-strap",
+  "version": "1.0.0",
+  "description": "Using Bootstrap 3 as Vue2 components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhpk/vue2-strap.git"
+  },
+  "keywords": [
+    "vue",
+    "vue2",
+    "bootstrap"
+  ],
+  "author": "Pham Kieu Thanh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thanhpk/vue2-strap/issues"
+  },
+  "homepage": "https://github.com/thanhpk/vue2-strap#readme",
+  "dependencies": {
+    "bootstrap": "3",
+    "jquery": "^3.1.1"
+  }
+}
