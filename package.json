@@ -1,10 +1,10 @@
 {
   "name": "vue2-strap",
-	"version": "1.0.9",
+	"version": "1.0.10",
   "description": "Using Bootstrap 3 in Vue2 style",
   "author": "Thanh Pham <thanhpk@live.com>",
   "private": false,
-	"main": "./dist/build.js",
+	"main": "./index.js",
 	"reoisitory": {
 		"type": "git",
 		"url": "git+https://github.com/thanhpk/vue2-strap.git"
