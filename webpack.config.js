@@ -2,8 +2,9 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './index.js',
   output: {
+		libraryTarget: "umd",
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
@@ -52,12 +53,12 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    /*new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
         warnings: false
       }
-    }),
+    }),*/
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })

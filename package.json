@@ -1,8 +1,25 @@
 {
   "name": "vue2-strap",
+	"version": "1.0.6",
   "description": "Using Bootstrap 3 in Vue2 style",
   "author": "Thanh Pham <thanhpk@live.com>",
-  "private": true,
+  "private": false,
+	"main": "./dist/build.js",
+	"reoisitory": {
+		"type": "git",
+		"url": "git+https://github.com/thanhpk/vue2-strap.git"
+	},
+	"keywords": [
+		"vue",
+		"vue2",
+		"component",
+		"bootstrap"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/thanhpk/vue2-strap/issues"
+	},
+	"homepage": "https://github.com/thanhpk/vue2-strap#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"

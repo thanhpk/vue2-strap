@@ -1,3 +1,3 @@
-import carousel from './components/carousel';
-
-export { carousel };
+import carousel from './components/carousel.vue';
+const B = 40;
+export {carousel, B};
