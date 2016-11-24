@@ -1,4 +1,4 @@
-<template><slot></slot></template>
+<template><div>GRET</div></template>
 <script>	
 import jQuery from 'jquery';
 
@@ -234,7 +234,9 @@ function loadCarousel(jQuery, element) {
 		}(jQuery, element);
 }
 export default {
-	mounted() {
+		mounted() {
+		console.log('good');
+		console.log(this.$el);
 		loadCarousel(jQuery, this.$el);
 	}
 }
