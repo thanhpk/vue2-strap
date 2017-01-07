@@ -66,6 +66,8 @@
 <script>
 import DropdownHover from './dropdownhover.vue';
 import Carousel from './carousel.vue';
+
+import bootstrap from './css/bootstrap.min.css';
 export default {
   name: 'app',
 	  components: {
