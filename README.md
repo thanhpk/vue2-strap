@@ -24,7 +24,6 @@ Just wrap your standard bootstrap html with vue2-strap and it will run
 </html>
 ```
 
-
 ```js
 // main.js
 
@@ -68,4 +67,3 @@ module.exports = {
   ...
 }
 ```
-
