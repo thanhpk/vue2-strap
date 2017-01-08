@@ -61,13 +61,16 @@
 				</div>
 </carousel>
 	<button type="button" class="btn btn-default" v-tooltip="true" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" v-tooltip>Tooltip on bottom</button>
 </div>
 </template>
 
 <script>
 import DropdownHover from './dropdownhover.vue';
 import Carousel from './carousel.vue';
-import Tooltip from './tooltip.js';
+import Tooltip from './tooltip.vue';
 
 import bootstrap from './css/bootstrap.min.css';
 export default {
