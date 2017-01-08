@@ -9,7 +9,7 @@ Just wrap your standard bootstrap html with vue2-strap and it will run
 <head></head>
 <body>
 <div id="app">
-  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom" v-tooltip>Tooltip on bottom</button>
+  <button v-tooltip type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">Tooltip on bottom</button>
   
   <dropdown>
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Drop down <span class="caret"></span></button>
@@ -52,7 +52,7 @@ npm install --save vue2-strap
 ```
 
 2. add resolve
-In your webpack.config.js, add resolve alias for vue2-strap
+In your `webpack.config.js` (or `webpack.base.conf.js`), add resolve alias for vue2-strap
 ```json
 module.exports = {
   entry: ...
@@ -61,7 +61,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': ...,
-	  'bootstrap': 'vue2-strap/src'
+	  'bootstrap': 'bootstrap': path.resolve(__dirname, '../node_modules/vue2-strap/dist')
     }
   },
   ...
