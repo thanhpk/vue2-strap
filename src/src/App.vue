@@ -28,7 +28,7 @@
       </dropdownhover>
 
 
-  
+  <i class="glyphicon glyphicon-eur"></i>
 
 			<carousel id="carousel-example-generic" class="carousel slide col-sm-12" data-ride="carousel">
 				<!-- Indicators -->
@@ -60,21 +60,25 @@
 					</div>
 				</div>
 </carousel>
+	<button type="button" class="btn btn-default" v-tooltip="true" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
 </div>
 </template>
 
 <script>
 import DropdownHover from './dropdownhover.vue';
 import Carousel from './carousel.vue';
+import Tooltip from './tooltip.js';
 
 import bootstrap from './css/bootstrap.min.css';
 export default {
   name: 'app',
-	  components: {
+	components: {
     dropdownhover: DropdownHover,
 		carousel: Carousel
   },
-
+	directives: {
+	  tooltip: Tooltip
+	},
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
