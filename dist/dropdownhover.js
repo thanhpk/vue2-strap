@@ -4,13 +4,13 @@ import dropdown from'./dropdown.vue';
 var $ = jQuery;
 export default {
 	mounted() {
-		dropdown.manualLoad(this.$el, {hideTimeout: this.$el.dataset.hideTimeout || 200});
-		DropdownHover($(this.$el));
+		dropdown.manualLoad(this.$el);
+		DropdownHover($(this.$el), {hideTimeout: parseInt(this.$el.dataset.hideTimeout || 200)});
 	},
 	manualLoad(el, options) {
-		var hideTimeout = options.hideTimeout || el.dataset.hideTimeout || 200;
-		dropdown.manualLoad(el, {hideTimeout: hideTimeout});
-		DropdownHover($(el));
+		var hideTimeout = parseInt(options.hideTimeout || el.dataset.hideTimeout || 200);
+		dropdown.manualLoad(el);
+		DropdownHover($(el), {hideTimeout: hideTimeout});
 	}
 };
 
