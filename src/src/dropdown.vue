@@ -1,2 +1,11 @@
-<template><div class="dropdown1"><slot></slot></div></template>
+<template><div class="dropdown inlineblock"><slot></slot></div></template>
 <script src="./dropdown.js"></s1cript>
+<style>
+.inlineblock {
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+</style>
