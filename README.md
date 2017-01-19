@@ -2,7 +2,7 @@
 Bootstrap 3 as Vue2 component
 
 ## You don't have to learn another syntax to use bootstrap in your vue2 app !
-Just wrap your standard bootstrap html with vue2-strap and it will run
+Just wrap your standard bootstrap html with vue2-strap and hit run.
 
 ```html
 <html>
@@ -46,6 +46,8 @@ new Vue({
 ```
 
 # install
+*Note: Those components only works with vue> 2.1.8*
+
 1. download the source
 ```sh
 npm install --save vue2-strap
@@ -67,3 +69,23 @@ module.exports = {
   ...
 }
 ```
+
+
+# Process
+## Standard
+- [ ] Transitions
+- [x] Modal
+- [x] Dropdown
+- [ ] Scrollspy
+- [x] Tab
+- [x] Tooltip
+- [x] Popover
+- [x] Alert
+- [x] Button
+- [x] Carousel
+- [x] Collapse
+- [ ] Affix
+
+## Extension
+- [x] Dropdown Hover
+- [ ] Typehead
