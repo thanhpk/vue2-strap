@@ -1,9 +1,15 @@
 import jQuery from 'jquery';
 
 export default {
+	props: ['options'],
+	watch: {
+		options(newValue) {
+			jQuery(this.$el).collapse(newValue.toString());
+		}
+	},
 	mounted() {
-		manualLoad(jQuery);
-		jQuery(this.$el).collapse();
+		manualLoad(jQuery, this);
+		jQuery(this.$el).collapse(this.options);
 	}
 };
 
@@ -18,7 +24,7 @@ export default {
 
 /* jshint latedef: false */
 
-function manualLoad($) {
+function manualLoad($, vm) {
 	'use strict';
 
 	// COLLAPSE PUBLIC CLASS DEFINITION
@@ -64,6 +70,7 @@ function manualLoad($) {
 		}
 
 		var startEvent = $.Event('show.bs.collapse');
+		vm.$emit('show_bs_collapse');
 		this.$element.trigger(startEvent);
 		if (startEvent.isDefaultPrevented()) return;
 
@@ -90,6 +97,7 @@ function manualLoad($) {
 				.removeClass('collapsing')
 				.addClass('collapse in')[dimension]('');
 			this.transitioning = 0;
+			vm.$emit('shown_bs_collapse');
 			this.$element
 				.trigger('shown.bs.collapse');
 		};
@@ -107,6 +115,7 @@ function manualLoad($) {
 		if (this.transitioning || !this.$element.hasClass('in')) return;
 
 		var startEvent = $.Event('hide.bs.collapse');
+		vm.$emit('hide_bs_collapse');
 		this.$element.trigger(startEvent);
 		if (startEvent.isDefaultPrevented()) return;
 
@@ -131,6 +140,7 @@ function manualLoad($) {
 				.removeClass('collapsing')
 				.addClass('collapse')
 				.trigger('hidden.bs.collapse');
+			vm.$emit('hidden_bs_collapse');
 		};
 
 		if (!$.support.transition) return complete.call(this);
