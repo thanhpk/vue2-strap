@@ -145,4 +145,4 @@ function manualLoad($, vm) {
 		.on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
 			$(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type));
 		});
-}(jQuery);
+}
