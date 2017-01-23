@@ -1,13 +1,21 @@
 import jQuery from 'jquery';
 
 export default {
+	props: ['options'],
+	watch: {
+		options(newValue) {
+			jQuery(this.$el).collapse(newValue.toString());
+		}
+	},
 	mounted() {
-
+		manualLoad(jQuery, this.$el, this);
+		jQuery(this.$el).dropdown(this.options);
 	},
 	manualLoad(el) {
-		manualLoad(jQuery, el);
+		manualLoad(jQuery, el, this);
 	}
 };
+
 
 /* ========================================================================
  * Bootstrap: dropdown.js v3.3.7
@@ -18,7 +26,7 @@ export default {
  * ======================================================================== */
 
 
-function manualLoad($, el) {
+function manualLoad($, el, vm) {
 	'use strict';
 
 	// DROPDOWN CLASS DEFINITION
@@ -61,11 +69,12 @@ function manualLoad($, el) {
 				return;
 
 			$parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget));
-
+			vm.$emit('hide_bs_dropdown', e);
 			if (e.isDefaultPrevented()) return;
 
 			$this.attr('aria-expanded', 'false');
 			$parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget));
+			vm.$emit('hidden_bs_dropdown', relatedTarget);
 		});
 	}
 
@@ -90,7 +99,7 @@ function manualLoad($, el) {
 
 			var relatedTarget = { relatedTarget: this };
 			$parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget));
-
+			vm.$emit('show_bs_dropdown', relatedTarget);
 			if (e.isDefaultPrevented()) return undefined;
 
 			$this
@@ -100,6 +109,7 @@ function manualLoad($, el) {
 			$parent
 				.toggleClass('open')
 				.trigger($.Event('shown.bs.dropdown', relatedTarget));
+			vm.$emit('shown_bs_dropdown', relatedTarget);
 		}
 
 		return false;
@@ -119,7 +129,11 @@ function manualLoad($, el) {
 		var isActive = $parent.hasClass('open');
 
 		if (!isActive && e.which != 27 || isActive && e.which == 27) {
-			if (e.which == 27) $parent.find(toggle).trigger('focus');
+			if (e.which == 27) {
+				$parent.find(toggle).trigger('focus');
+				vm.$emit('focus');
+			}
+			vm.$emit('click');
 			return $this.trigger('click');
 		}
 
@@ -134,6 +148,7 @@ function manualLoad($, el) {
 		if (e.which == 40 && index < $items.length - 1) index++; // down
 		if (!~index) index = 0;
 
+		vm.$emit('focus');
 		$items.eq(index).trigger('focus');
 		return undefined;
 	};

@@ -1,6 +1,6 @@
 {
   "name": "vue2-strap",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Using Bootstrap 3 as Vue2 components",
   "main": "index.js",
   "scripts": {
